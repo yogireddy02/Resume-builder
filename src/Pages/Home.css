@@ -1,0 +1,392 @@
+
+/* Modern Resume Builder UI */
+:root {
+  --primary: #4f46e5;
+  --primary-light: #818cf8;
+  --accent: #f97316;
+  --accent-light: #fb923c;
+  --bg: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-hover: rgba(255, 255, 255, 0.98);
+  --border: #e2e8f0;
+  --radius: 16px;
+  --radius-sm: 12px;
+  --shadow: 0 8px 32px -8px rgba(79, 70, 229, 0.15);
+  --shadow-lg: 0 24px 48px -12px rgba(79, 70, 229, 0.25);
+  --text: #0f172a;
+  --text-light: #475569;
+  --muted: #64748b;
+}
+
+body, .home-modern-bg {
+  background: var(--bg);
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(at 80% 0%, rgba(79, 70, 229, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(249, 115, 22, 0.05) 0px, transparent 50%);
+}
+.home-modern-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #fff;
+  padding: 2.5rem 1.5rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-modern-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.home-modern-hero .icon {
+  font-size: 2.8rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.home-modern-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+  background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.9) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.home-modern-desc {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+}
+.home-modern-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.home-modern-form-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.home-modern-form-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: var(--card-hover);
+}
+.home-modern-form-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.home-modern-form-title::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-light) 0%, transparent 100%);
+  border-radius: 2px;
+}
+
+.home-modern-form-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.home-modern-progress {
+  flex: 1;
+  height: 6px;
+  background: linear-gradient(90deg, var(--border) 0%, rgba(226,232,240,0.3) 100%);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.home-modern-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+  position: relative;
+}
+
+.home-modern-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 100%);
+  animation: shimmer 2s infinite;
+}
+
+.home-modern-form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.home-modern-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  background: var(--card-bg);
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.home-modern-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  outline: none;
+}
+
+.home-modern-input::placeholder {
+  color: transparent;
+}
+
+.home-modern-label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  padding: 0 0.25rem;
+  color: var(--muted);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  background: var(--card-bg);
+}
+
+.home-modern-input:focus ~ .home-modern-label,
+.home-modern-input:not(:placeholder-shown) ~ .home-modern-label {
+  top: -0.5rem;
+  left: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+textarea.home-modern-input {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+.home-modern-btn {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.home-modern-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3);
+}
+
+.home-modern-btn:active {
+  transform: translateY(1px);
+}
+
+.home-modern-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255,255,255,0.1) 50%,
+    transparent 100%
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+.home-modern-preview-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  min-height: 300px;
+  position: sticky;
+  top: 1rem;
+}
+
+.home-modern-preview-card:hover {
+  box-shadow: var(--shadow-lg);
+  background: var(--card-hover);
+}
+
+.home-modern-preview-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.home-modern-preview-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.home-modern-tab {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: var(--text-light);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  white-space: nowrap;
+}
+
+.home-modern-tab:hover {
+  color: var(--primary);
+  background: rgba(79, 70, 229, 0.05);
+}
+
+.home-modern-tab.active {
+  color: var(--primary);
+  background: rgba(79, 70, 229, 0.1);
+  position: relative;
+}
+
+.home-modern-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.home-modern-preview-content {
+  padding: 1rem 0;
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.home-modern-copy-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.home-modern-copy-btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+.keyword-badge {
+  display: inline-block;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  margin: 0.25rem;
+  color: var(--text);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.keyword-badge:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  20%, 100% { transform: translateX(100%) rotate(45deg); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .home-modern-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .home-modern-preview-card {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-modern-hero {
+    padding: 1.5rem 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .home-modern-title {
+    font-size: 1.8rem;
+  }
+  
+  .home-modern-form-card,
+  .home-modern-preview-card {
+    padding: 1.2rem 1rem;
+  }
+  
+  .home-modern-preview-tabs {
+    gap: 0.25rem;
+  }
+  
+  .home-modern-tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}

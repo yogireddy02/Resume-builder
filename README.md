@@ -63,7 +63,7 @@ https://yogireddy02.github.io/resume-builder/
 Yogavardhan Reddy
 📧 yogavardhanreddy02@gmail.com
 🔗 Portfolio
-🔗 LinkedIn
+🔗 www.linkedin.com/in/yogavardhanreddy
 
 
 ---

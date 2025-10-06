@@ -1,16 +1,78 @@
-# React + Vite
+# 🧩 Resume Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive **Resume Builder Web App** built with **React + Vite**, allowing users to create professional resumes quickly with live previews and AI assistance.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- 📝 **User Inputs:** Fill in personal information, education, experience, skills, and projects.  
+- 👀 **Live Preview:** See your resume update in real-time as you type.  
+- 🤖 **Google Gemini API:** AI-powered suggestions for resume content.  
+- 🎨 **Styling:** Clean UI with **CSS** and **Bootstrap** for responsive design.  
+- 💾 **Downloadable Resume:** Save your resume as a PDF.  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React.js + Vite  
+- **Styling:** CSS + Bootstrap  
+- **AI Integration:** Google Gemini API  
+- **Deployment:** GitHub Pages  
+
+---
+
+## 📦 Installation & Setup
+
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/yogireddy02/resume-builder.git
+
+2. Navigate to project folder
+    ```bash
+    cd resume-builder
+    
+3. Install dependencies
+    ```bash
+    npm install
+    
+4. Run the project locally
+    ```bash
+    npm run dev
+    
+5. Build for production
+    ```bash
+    npm run build
+    
+🌐 Live Demo
+This link isn’t verified and may contain data from your conversation that will be shared with a third-party site. Make sure you trust this link before proceeding.Learn more
+
+https://yogireddy02.github.io/resume-builder/
+
+💡 Future Improvements
+
+▶Add multiple resume templates
+▶Dark mode
+▶User login to save resumes online
+▶AI-based skill suggestions
+
+
+🧑‍💻 Author
+
+Yogavardhan Reddy
+📧 yogavardhanreddy02@gmail.com
+🔗 Portfolio
+🔗 LinkedIn
+
+
+---
+
+### ✅ Next Steps
+
+1. Save this content in `README.md` in your project folder.  
+2. Add, commit, and push to GitHub:
+```bash
+git add README.md
+git commit -m "Updated README with actual project details"
+git push origin main
